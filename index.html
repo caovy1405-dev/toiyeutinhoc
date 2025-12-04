@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài tập Biểu mẫu Web</title>
+
+<style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(#ffb6d9, #ffd6e9);
+        margin: 0;
+        padding: 20px;
+        color: #5a2d41;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #d6006b;
+        text-shadow: 1px 1px 2px white;
+    }
+
+    .content-box {
+        background: #ffe6f2;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #ff9ac2;
+        margin-bottom: 40px;
+        line-height: 1.6;
+    }
+
+    fieldset {
+        border: 2px solid #ff5c9a;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background: white;
+    }
+
+    legend {
+        font-weight: bold;
+        color: #d6006b;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        margin-bottom: 10px;
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid #d68aa9;
+    }
+
+    .flying-corgi {
+        position: fixed;
+        width: 120px;
+        top: 20%;
+        left: -150px;
+        animation: fly 12s linear infinite;
+        opacity: 0.95;
+    }
+
+    @keyframes fly {
+        0%   { transform: translateX(0) translateY(0); }
+        50%  { transform: translateX(110vw) translateY(-40px); }
+        100% { transform: translateX(0) translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- CORGI BAY BAY -->
+<img src="https://i.imgur.com/vy8bq7Q.png" class="flying-corgi" alt="corgi bay">
+
+<h1>📘 BÀI TẬP BIỂU MẪU WEB</h1>
+
+<!-- NỘI DUNG LÝ THUYẾT -->
+<div class="content-box">
+<h2>I. BIỂU MẪU WEB</h2>
+
+<p><b>Khái niệm:</b> biểu mẫu web hay phần tử <b>form</b> của HTML là công cụ thu thập dữ liệu, được dùng để nhập vào form và xử lý tại chỗ hoặc gửi về máy chủ.</p>
+
+<p>Ví dụ: form đăng ký tài khoản, mua hàng, tìm kiếm,…</p>
+
+<b>Cấu tạo:</b>
+<ul>
+    <li>Biểu mẫu hiển thị trên web (HTML)</li>
+    <li>Ứng dụng/script xử lý dữ liệu (thường nằm trên máy chủ)</li>
+</ul>
+
+<p>Biểu mẫu được tạo bởi thẻ:</p>
+
+<pre>
+&lt;form&gt;
+   các phần tử biểu mẫu
+&lt;/form&gt;
+</pre>
+
+<p>Các phần tử thường gặp: <b>input, label, select, textarea</b> (khác: fieldset, legend, datalist,…)</p>
+
+<p><b>Phần tử label</b>:</p>
+<pre>
+&lt;label for="id_input"&gt;Tên nhãn&lt;/label&gt;
+</pre>
+
+<p><b>Phần tử input</b>:</p>
+<pre>
+&lt;input id="id" type="..." name="..."&gt;
+</pre>
+
+<p><b>Phần tử select</b>:</p>
+<pre>
+&lt;select id="..." name="..."&gt;
+    &lt;option value="..."&gt;...&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+<p><b>Phần tử textarea</b>:</p>
+<pre>
+&lt;textarea id="..." name="..." rows="..." cols="..."&gt;&lt;/textarea&gt;
+</pre>
+
+<p><b>Phần tử fieldset</b>: dùng để nhóm các phần tử liên quan.</p>
+</div>
+
+<!-- THỰC HÀNH -->
+<div class="content-box">
+<h2>II. THỰC HÀNH</h2>
+
+<h3>1. Nhiệm vụ 1 – Tạo biểu mẫu thông tin món ăn</h3>
+<form>
+    <label for="tenmon">Tên món:</label><br>
+    <input type="text" id="tenmon" name="tenmon"><br>
+
+    <label for="dongia">Đơn giá:</label><br>
+    <input type="number" id="dongia" name="dongia"><br>
+</form>
+
+<h3>2. Nhiệm vụ 2 – Biểu mẫu đăng ký môn thi tốt nghiệp</h3>
+
+<form>
+<fieldset>
+    <legend>Thông tin cá nhân</legend>
+
+    <label for="hoten">Họ tên:</label><br>
+    <input type="text" id="hoten" name="hoten"><br>
+
+    <label for="cccd">CCCD:</label><br>
+    <input type="number" id="cccd" name="cccd"><br>
+
+    <label for="ngaysinh">Ngày sinh:</label><br>
+    <input type="date" id="ngaysinh" name="ngaysinh"><br>
+
+    <label>Giới tính:</label><br>
+    <input type="radio" name="gender" value="nam"> Nam
+    <input type="radio" name="gender" value="nu"> Nữ<br>
+</fieldset>
+
+<fieldset>
+    <legend>Môn thi</legend>
+
+    <label>Môn bắt buộc:</label><br>
+    <input type="checkbox" name="mon" value="toan"> Toán
+    <input type="checkbox" name="mon" value="van"> Văn
+    <input type="checkbox" name="mon" value="nn"> Ngoại ngữ<br><br>
+
+    <label>Tổ hợp:</label><br>
+    <input type="radio" name="tohop" value="khtn"> KHTN
+    <input type="radio" name="tohop" value="khxh"> KHXH<br><br>
+
+    <input type="submit" value="Gửi thông tin">
+</fieldset>
+</form>
+</div>
+
+<!-- LUYỆN TẬP -->
+<div class="content-box">
+<h2>III. LUYỆN TẬP</h2>
+
+<p><b>Form cơ bản:</b></p>
+<pre>
+&lt;form action="/register" method="post"&gt;
+    &lt;!-- các input --&gt;
+&lt;/form&gt;
+</pre>
+
+<p><b>Form có select:</b></p>
+<pre>
+&lt;form&gt;
+  &lt;label for="country"&gt;Quốc gia:&lt;/label&gt;
+  &lt;select id="country" name="country"&gt;
+    &lt;option value="vietnam"&gt;Việt Nam&lt;/option&gt;
+    &lt;option value="usa"&gt;United States&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</pre>
+
+<p><b>Form có textarea:</b></p>
+<pre>
+&lt;form&gt;
+  &lt;label for="feedback"&gt;Phản hồi:&lt;/label&gt;&lt;br&gt;
+  &lt;textarea id="feedback" name="feedback" rows="4" cols="50"&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</pre>
+
+<p><b>Input text / email / date</b> được minh họa trong nội dung trên.</p>
+</div>
+
+<!-- VẬN DỤNG -->
+<div class="content-box">
+<h2>IV. VẬN DỤNG</h2>
+
+<pre>
+&lt;form action="/submit_registration" method="post"&gt;
+  &lt;label for="fullname"&gt;Họ và tên:&lt;/label&gt;
+  &lt;input type="text" id="fullname" name="fullname" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="birthdate"&gt;Ngày sinh:&lt;/label&gt;
+  &lt;input type="date" id="birthdate" name="birthdate" required&gt;
+
+  &lt;label for="membership"&gt;Loại hình thành viên:&lt;/label&gt;
+  &lt;select id="membership" name="membership"&gt;
+    &lt;option value="basic"&gt;Thành viên cơ bản&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</pre>
+
+</div>
+
+</body>
+</html>
